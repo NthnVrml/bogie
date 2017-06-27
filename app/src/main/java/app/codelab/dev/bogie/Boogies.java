@@ -10,7 +10,9 @@ public enum Boogies {
     DPF("DPF", R.drawable.logo_bogie_dpf),
     EXTERNALISATION("EXTERNALISATION", R.drawable.logo_bogie_externalisation),
     SMQ("SMQ",R.drawable.logo_bogie_smq),
-    MOET("MOET", R.drawable.logo_bogie_moet);
+    MOET("MOET", R.drawable.logo_bogie_moet),
+    SECURITE("SECURITE",R.drawable.bogie_square),
+    ENV("ENVIRONEMENT",R.drawable.bogie_square);
 
 
     private String title;
@@ -26,15 +28,8 @@ public enum Boogies {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getImageResource() {
         return imageResource;
     }
 
-    public void setImageResource(int imageResource) {
-        this.imageResource = imageResource;
-    }
 }

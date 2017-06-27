@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         init();
     }
 
@@ -92,6 +91,8 @@ public class MainActivity extends AppCompatActivity
 
         }
 
+        //TODO : recopier bien salement cette méthode dans le ResultsActivity :) <3
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity
 
     private void setupBogiesGrid() {
         mBogiesView = (RecyclerView) findViewById(R.id.rv_bogie);
-        mBogieAdapter = new BogieAdapter();
+        mBogieAdapter = new BogieAdapter(this);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
         mBogiesView.setLayoutManager(mLayoutManager);
         mBogiesView.setAdapter(mBogieAdapter);
