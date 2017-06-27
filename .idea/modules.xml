@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/bogie.iml" filepath="$PROJECT_DIR$/bogie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sncfid-1.3.5/sncfid-1.3.5.iml" filepath="$PROJECT_DIR$/sncfid-1.3.5/sncfid-1.3.5.iml" />
     </modules>
   </component>
 </project>

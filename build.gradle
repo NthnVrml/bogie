@@ -15,6 +15,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven { url 'http://alm.sncf.fr/nexus/content/repositiries/' }
     }
 }
 
