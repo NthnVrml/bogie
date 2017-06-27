@@ -71,9 +71,9 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
 
         MyViewHolder(final View view) {
             super(view);
-            name = view.findViewById(R.id.bogie_item_name);
-            image = view.findViewById(R.id.bogie_item_image);
-            button = view.findViewById(R.id.bogie_item_button);
+            name = (TextView) view.findViewById(R.id.bogie_item_name);
+            image = (ImageView) view.findViewById(R.id.bogie_item_image);
+            button = (AppCompatButton) view.findViewById(R.id.bogie_item_button);
         }
     }
 }

@@ -67,8 +67,8 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
 
         MyViewHolder(final View view) {
             super(view);
-            link = view.findViewById(R.id.result_item_link);
-            description = view.findViewById(R.id.result_item_description);
+            link = (TextView) view.findViewById(R.id.result_item_link);
+            description = (TextView) view.findViewById(R.id.result_item_description);
         }
     }
 }
