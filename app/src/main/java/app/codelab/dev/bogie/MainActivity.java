@@ -13,13 +13,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
-    private ArrayList<Bogie> mBogies = new ArrayList<>();
     private RecyclerView mBogiesView;
     private BogieAdapter mBogieAdapter;
 
@@ -100,26 +97,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void bindView() {
-    }
-
     private void init() {
-        bindView();
         setupBogiesGrid();
-        
-        
     }
 
     private void setupBogiesGrid() {
-        for (int i = 0; i < 4; i++) {
-            final Bogie bogie = new Bogie("name " + i);
-            mBogies.add(bogie);
-        }
-
-
-
         mBogiesView = (RecyclerView) findViewById(R.id.rv_bogie);
-        mBogieAdapter = new BogieAdapter(mBogies);
+        mBogieAdapter = new BogieAdapter();
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false);
         mBogiesView.setLayoutManager(mLayoutManager);
         mBogiesView.setAdapter(mBogieAdapter);
