@@ -7,4 +7,5 @@ ID du projet   bogiecodelab
 Clé API Web  AIzaSyDQxRZFR1Wo8D3DB1U7tDtonDsM1Kf7Euk
 
 
-Exemple d'appel : https://bogiecodelab.firebaseio.com/hits.json
+Exemple d'appel pour tous les objets à la racine au format JSON
+https://bogiecodelab.firebaseio.com/.json
