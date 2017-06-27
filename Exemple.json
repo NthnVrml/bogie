@@ -1,0 +1,399 @@
+{
+   "took": 24,
+   "timed_out": false,
+   "_shards": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0
+   },
+   "hits": {
+      "total": 627,
+      "max_score": 1,
+      "hits": [
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "14",
+            "_score": 1,
+            "_source": {
+               "name": "Innovation participative",
+               "description": "Communication sur Léonard : En direct 06 de 2016 Guide de l'innovation participative pour les managers Lien vers le site LEONARD",
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Animer les Métiers & les Démarches d'Amélioration"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "Innovation"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "19",
+            "_score": 1,
+            "_source": {
+               "name": "Processus Manager et réaliser les projets (IG 00250)",
+               "description": "Description des principales activités du processus",
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Manager & Réaliser les projets"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "Projets"
+                  },
+                  {
+                     "name": "Processus"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "22",
+            "_score": 1,
+            "_source": {
+               "name": "Note d'Organisation Générale Agence Projet EOLE (IG 09302)",
+               "description": null,
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOA/MOEG"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Manager & Réaliser les projets"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "Organisation"
+                  },
+                  {
+                     "name": "Missions"
+                  },
+                  {
+                     "name": "Responsabilités"
+                  },
+                  {
+                     "name": "DPF"
+                  },
+                  {
+                     "name": "NOG"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "24",
+            "_score": 1,
+            "_source": {
+               "name": "Plan d'Actions Sécurité 2016 de l'Agence TLN de la DPF (IG 09702)",
+               "description": null,
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOA/MOEG"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Manager & Réaliser les projets"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "Sécurité"
+                  },
+                  {
+                     "name": "PAS"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "25",
+            "_score": 1,
+            "_source": {
+               "name": "Note d'Organisation Générale de l'Agence Projet Accessibilité des Gares en Île-de-France (IG 09810)",
+               "description": null,
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOA/MOEG"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Manager & Réaliser les projets"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "Organisation"
+                  },
+                  {
+                     "name": "Missions"
+                  },
+                  {
+                     "name": "Responsabilités"
+                  },
+                  {
+                     "name": "DPF"
+                  },
+                  {
+                     "name": "NOG"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "26",
+            "_score": 1,
+            "_source": {
+               "name": "Plan d'Actions Sécurité 2016 de l'agence projet Accessibilité (IG 09812)",
+               "description": null,
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOA/MOEG"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Manager & Réaliser les projets"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "Sécurité"
+                  },
+                  {
+                     "name": "PAS"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "29",
+            "_score": 1,
+            "_source": {
+               "name": "RexFlex",
+               "description": null,
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOA/MOEG"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Manager & Réaliser les projets"
+                  }
+               ],
+               "activities": [],
+               "tags": [
+                  {
+                     "name": "REX"
+                  },
+                  {
+                     "name": "REXFLEX"
+                  },
+                  {
+                     "name": "Retour d'expérience"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "40",
+            "_score": 1,
+            "_source": {
+               "name": "Note d'organisation CEP SP (IGSP IG 00018)",
+               "description": "Cette procédure décrit l’organisation et le fonctionnement du groupe Coordination Etudes Projets du pôle études de l’Ingénierie Sud Paris.",
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOEE"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Produire les Etudes"
+                  }
+               ],
+               "activities": [
+                  {
+                     "name": "Métier CEP"
+                  }
+               ],
+               "tags": [
+                  {
+                     "name": "Organisation"
+                  },
+                  {
+                     "name": "Missions"
+                  },
+                  {
+                     "name": "Responsabilités"
+                  },
+                  {
+                     "name": "NOG"
+                  },
+                  {
+                     "name": "Sud Paris"
+                  },
+                  {
+                     "name": "CEP"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "41",
+            "_score": 1,
+            "_source": {
+               "name": "Boîte à outils + liste des activités du CEP",
+               "description": null,
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOEE"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Produire les Etudes"
+                  }
+               ],
+               "activities": [
+                  {
+                     "name": "Métier CEP"
+                  }
+               ],
+               "tags": [
+                  {
+                     "name": "Outils"
+                  },
+                  {
+                     "name": "CEP"
+                  },
+                  {
+                     "name": "Boîte"
+                  }
+               ]
+            }
+         },
+         {
+            "_index": "bogie",
+            "_type": "documents",
+            "_id": "44",
+            "_score": 1,
+            "_source": {
+               "name": "Note d'organisation EG NP (IGNP IG 00028)",
+               "description": "Procédure décrivant l’organisation et le fonctionnement du groupe Etudes Générales du Pôle Etudes Nord Paris.",
+               "contact": null,
+               "profils": [
+                  {
+                     "name": "Système Management"
+                  },
+                  {
+                     "name": "MOEE"
+                  }
+               ],
+               "domains": [
+                  {
+                     "name": "Produire les Etudes"
+                  }
+               ],
+               "activities": [
+                  {
+                     "name": "Métiers EG-EV"
+                  }
+               ],
+               "tags": [
+                  {
+                     "name": "Organisation"
+                  },
+                  {
+                     "name": "Missions"
+                  },
+                  {
+                     "name": "Responsabilités"
+                  },
+                  {
+                     "name": "NOG"
+                  },
+                  {
+                     "name": "Nord Paris"
+                  },
+                  {
+                     "name": "Revue"
+                  },
+                  {
+                     "name": "EG"
+                  }
+               ]
+            }
+         }
+      ]
+   }
+}
