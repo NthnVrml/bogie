@@ -11,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.google.firebase.FirebaseApp;
+
 import java.util.List;
 
 /**
@@ -20,6 +22,7 @@ import java.util.List;
 public class ResultsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private List<Result> mResults;
+    private FirebaseApp firebaseApp;
 
 
     private RecyclerView mResultsView;

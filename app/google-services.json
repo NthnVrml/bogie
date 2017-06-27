@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "948657423205",
+    "firebase_url": "https://bogiecodelab.firebaseio.com",
+    "project_id": "bogiecodelab",
+    "storage_bucket": "bogiecodelab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948657423205:android:a57e9ad7288146cf",
+        "android_client_info": {
+          "package_name": "app.codelab.dev.bogie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948657423205-uaftmv2dlbnj0k9j8vtip9ioshhoclm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiGOM_pdWS7eg0NzL2HH3aG7ONgPfHR9Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
