@@ -1,5 +1,6 @@
 package com.sncf.android.internal.codelab2017.app4;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -135,7 +136,10 @@ public class ResultsActivity extends AppCompatActivity
         Log.i("ResultActivity", bogieCategory);
 
         final Query query = mDatabase.orderByChild("bogie").equalTo(bogieCategory);
-        query.addValueEventListener(new ValueEventListener() {
+        final ProgressDialog Dialog = new ProgressDialog(this);
+        Dialog.setMessage("Récupération des données ...");
+        Dialog.show();
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (final DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
@@ -144,6 +148,7 @@ public class ResultsActivity extends AppCompatActivity
                 }
                 Log.i("Resultats", mResults.toString());
                 setupResultsList(mResults);
+                Dialog.hide();
             }
 
             @Override
