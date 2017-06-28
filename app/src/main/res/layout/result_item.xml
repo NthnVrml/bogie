@@ -6,24 +6,20 @@
     android:padding="15dp">
 
     <TextView
-        android:id="@+id/result_item_bogie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="bogie"/>
-
-    <TextView
-        android:id="@+id/result_item_link"
+        android:id="@+id/result_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:linksClickable="true"
         android:textColor="@android:color/holo_blue_dark"
-        android:text="https://ceciEstNotreSuperLien.sncf.com"/>
-
-    <TextView
-        android:id="@+id/result_item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="name"/>
+
+    <!--<TextView-->
+        <!--android:id="@+id/result_item_link"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:linksClickable="true"-->
+        <!--android:textColor="@android:color/holo_blue_dark"-->
+        <!--android:text="https://ceciEstNotreSuperLien.sncf.com"/>-->
 
     <TextView
         android:id="@+id/result_item_description"
