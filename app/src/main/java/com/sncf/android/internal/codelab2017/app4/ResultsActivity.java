@@ -165,5 +165,9 @@ public class ResultsActivity extends AppCompatActivity
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mResultsView.setLayoutManager(mLayoutManager);
         mResultsView.setAdapter(mResultsAdapter);
+
+//        final DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mResultsView.getContext(),
+//                DividerItemDecoration.VERTICAL);
+//        mResultsView.addItemDecoration(dividerItemDecoration);
     }
 }
