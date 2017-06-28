@@ -1,4 +1,4 @@
-package app.codelab.dev.bogie;
+package com.sncf.android.internal.codelab2017.app4;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import app.codelab.dev.bogie.R;
 
 /**
  * Created by Nicolas on 27/06/2017.
