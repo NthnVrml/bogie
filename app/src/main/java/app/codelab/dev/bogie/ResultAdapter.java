@@ -1,12 +1,14 @@
 package app.codelab.dev.bogie;
 
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,8 +34,28 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final Result result = mResults.get(position);
-        holder.link.setText(result.getLink());
+        final TextView name = holder.name;
+        final String link = result.getLink();
+        final String clickableName = "<b>text3:</b>  Text with a " +
+                String.format("<a href=\"%s\">link</a> ", link);
+
+
+        name.setText(fromHtml(clickableName));
+        name.setMovementMethod(LinkMovementMethod.getInstance());
+
+        name.setText(result.getName());
         holder.description.setText(result.getDescription());
+    }
+
+    @SuppressWarnings("deprecation")
+    public static Spanned fromHtml(String html){
+        Spanned result;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            result = Html.fromHtml(html);
+        }
+        return result;
     }
 
     @Override
@@ -41,34 +63,12 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
         return mResults.size();
     }
 
-    private void setupResultsList() {
-        mResults = new ArrayList<>();
-        mResults.add(new Result("https://github.com/NthnVrml/bogie", "description"));
-        mResults.add(new Result("lien fekfn", "description effenfo"));
-        mResults.add(new Result("lien fefoen", "description efojefpe"));
-        mResults.add(new Result("lien pkfnzepfkn", "description ezpfnzegpnze"));
-        mResults.add(new Result("lien zefkiabhaiai", "description oeooeoeoe"));
-        mResults.add(new Result("lien eoej ", "descriptio neoen n"));
-        mResults.add(new Result("lien   eoneon ", "description eobibfzpoeih"));
-        mResults.add(new Result("lien fefoen", "description efojefpe"));
-        mResults.add(new Result("lien pkfnzepfkn", "description ezpfnzegpnze"));
-        mResults.add(new Result("lien zefkiabhaiai", "description oeooeoeoe"));
-        mResults.add(new Result("lien eoej ", "descriptio neoen n"));
-        mResults.add(new Result("lien   eoneon ", "description eobibfzpoeih"));
-        mResults.add(new Result("lien fefoen", "description efojefpe"));
-        mResults.add(new Result("lien pkfnzepfkn", "description ezpfnzegpnze"));
-        mResults.add(new Result("lien zefkiabhaiai", "description oeooeoeoe"));
-        mResults.add(new Result("lien eoej ", "descriptio neoen n"));
-        mResults.add(new Result("lien   eoneon ", "description eobibfzpoeih"));
-    }
-
-
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView link, description;
+        TextView name, description;
 
         MyViewHolder(final View view) {
             super(view);
-            link = (TextView) view.findViewById(R.id.result_item_link);
+            name = (TextView) view.findViewById(R.id.result_item_name);
             description = (TextView) view.findViewById(R.id.result_item_description);
         }
     }

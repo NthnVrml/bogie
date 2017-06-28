@@ -9,10 +9,12 @@ import android.support.annotation.DrawableRes;
 public class Bogie {
     private String name;
     private @DrawableRes int image;
+    private @DrawableRes int imageBackGround;
 
     public Bogie(final Boogies boogies) {
         this.name = boogies.getTitle();
         this.image = boogies.getImageResource();
+        this.imageBackGround = boogies.getImageBackground();
     }
 
     public String getName() {
@@ -21,5 +23,9 @@ public class Bogie {
 
     public @DrawableRes int getImage() {
         return image;
+    }
+
+    public int getImageBackGround() {
+        return imageBackGround;
     }
 }

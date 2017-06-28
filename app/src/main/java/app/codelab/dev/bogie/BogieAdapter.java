@@ -39,10 +39,12 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
         final Bogie bogie = mBogies.get(position);
         holder.name.setText(bogie.getName());
         holder.image.setImageResource(bogie.getImage());
-        holder.button.setOnClickListener(new View.OnClickListener() {
+        holder.item.setBackgroundResource(bogie.getImageBackGround());
+        holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(mContext, ResultsActivity.class);
+                intent.putExtra("category", bogie.getName());
                 mContext.startActivity(intent);
             }
         });
@@ -61,6 +63,7 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
         mBogies.add(new Bogie(Boogies.SMQ));
         mBogies.add(new Bogie(Boogies.SECURITE));
         mBogies.add(new Bogie(Boogies.ENV));
+        mBogies.add(new Bogie(Boogies.IP_MED));
     }
 
     public void removeItem(int position) {
@@ -71,15 +74,15 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
+        private final View item;
         TextView name;
         ImageView image;
-        AppCompatButton button;
 
         MyViewHolder(final View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.bogie_item_name);
             image = (ImageView) view.findViewById(R.id.bogie_item_image);
-            button = (AppCompatButton) view.findViewById(R.id.bogie_item_button);
+            item = view.findViewById(R.id.item_bogie);
         }
     }
 }
