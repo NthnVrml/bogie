@@ -39,6 +39,7 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
         final Bogie bogie = mBogies.get(position);
         holder.name.setText(bogie.getName());
         holder.image.setImageResource(bogie.getImage());
+        holder.item.setBackgroundResource(bogie.getImageBackGround());
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
