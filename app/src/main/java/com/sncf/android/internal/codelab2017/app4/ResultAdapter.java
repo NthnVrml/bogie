@@ -1,8 +1,10 @@
 package com.sncf.android.internal.codelab2017.app4;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
@@ -64,6 +66,34 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
 
         descriptionTextView.setText(description);
 
+        holder.description.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(mContext); //alert for confirm to delete
+                    builder.setMessage("Voulez vous partager ce lien ? ");    //set message
+
+                    builder.setPositiveButton("Partager", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent sendIntent = new Intent();
+                            sendIntent.setAction(Intent.ACTION_SEND);
+                            sendIntent.putExtra(Intent.EXTRA_TEXT, "Voici un document qui peut t'être utile!\n" + link);
+                            sendIntent.setType("text/plain");
+                            mContext.startActivity(sendIntent);
+                        }
+                    }).setNegativeButton("Annuler", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    }).show();
+
+                return true;
+            }
+        });
+
     }
 
     @Override
@@ -73,7 +103,6 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, description;
-
         MyViewHolder(final View view) {
             super(view);
             name = (TextView) view.findViewById(R.id.result_item_name);
