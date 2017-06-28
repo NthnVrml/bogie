@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.codelab.dev.bogie.MainActivity">
+    tools:context="app.codelab.dev.bogie.com.sncf.android.internal.codelab2017.app4.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarlayout"

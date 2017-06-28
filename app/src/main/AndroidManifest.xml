@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.sncf.android.internal.codelab2017.app4.MainActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -20,7 +20,7 @@
         </activity>
 
         <activity
-            android:name=".ResultsActivity"
+            android:name="com.sncf.android.internal.codelab2017.app4.ResultsActivity"
             android:label="Results"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
