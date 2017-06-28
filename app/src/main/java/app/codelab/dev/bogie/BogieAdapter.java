@@ -43,6 +43,7 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(mContext, ResultsActivity.class);
+                intent.putExtra("category", bogie.getName());
                 mContext.startActivity(intent);
             }
         });
