@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
 
-        supportActionBar.setLogo(R.drawable.logo_bogie);
+        supportActionBar.setBackgroundDrawable(getDrawable(R.drawable.toolbar_background));
         supportActionBar.setDisplayUseLogoEnabled(true);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
