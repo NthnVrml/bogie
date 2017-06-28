@@ -63,6 +63,7 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
         mBogies.add(new Bogie(Boogies.SMQ));
         mBogies.add(new Bogie(Boogies.SECURITE));
         mBogies.add(new Bogie(Boogies.ENV));
+        mBogies.add(new Bogie(Boogies.IP_MED));
     }
 
 

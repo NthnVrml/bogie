@@ -2,7 +2,6 @@
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_bogie"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
@@ -11,6 +10,7 @@
     card_view:contentPadding="20dp">
 
     <LinearLayout
+        android:id="@+id/item_bogie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
