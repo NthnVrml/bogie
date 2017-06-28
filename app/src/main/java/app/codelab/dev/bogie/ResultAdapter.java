@@ -18,6 +18,7 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
 
     ResultAdapter(final List<Result> results){
         mResults = results;
+        setupResultsList();
     }
 
     @Override
