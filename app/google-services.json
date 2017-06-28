@@ -22,6 +22,43 @@
       "api_key": [
         {
           "current_key": "AIzaSyAiGOM_pdWS7eg0NzL2HH3aG7ONgPfHR9Q"
+        },
+        {
+          "current_key": "AIzaSyDAYcFQNVyuH8NwpcN5LzwwQHHhcx4sfpE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948657423205:android:1accf909007b8243",
+        "android_client_info": {
+          "package_name": "com.sncf.android.internal.codelab2017.app4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948657423205-uaftmv2dlbnj0k9j8vtip9ioshhoclm6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiGOM_pdWS7eg0NzL2HH3aG7ONgPfHR9Q"
+        },
+        {
+          "current_key": "AIzaSyDAYcFQNVyuH8NwpcN5LzwwQHHhcx4sfpE"
         }
       ],
       "services": {
