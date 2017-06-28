@@ -1,5 +1,6 @@
 package app.codelab.dev.bogie;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -9,10 +10,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
-import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,12 +29,13 @@ import java.util.List;
 
 public class ResultsActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private List<Result> mResults;
-    private FirebaseApp firebaseApp;
+    private List<Result> mResults = new ArrayList<>();
 
 
     private RecyclerView mResultsView;
     private ResultAdapter mResultsAdapter;
+
+    private DatabaseReference mDatabase;
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -56,7 +65,11 @@ public class ResultsActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -74,7 +87,30 @@ public class ResultsActivity extends AppCompatActivity
     @Override
     protected void onResume() {
         super.onResume();
-        setupResultsList(mResults);
+
+        final Intent intent = getIntent();
+        final String bogieCategory = intent.getStringExtra("category");
+
+        Log.i("ResultActivity", bogieCategory);
+
+        final Query query = mDatabase.orderByChild("bogie").equalTo(bogieCategory);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (final DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    Result result = postSnapshot.getValue(Result.class);
+                    mResults.add(result);
+                }
+                Log.i("Resultats", mResults.toString());
+                setupResultsList(mResults);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     private void setupResultsList(final List<Result> results) {

@@ -33,7 +33,9 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final Result result = mResults.get(position);
         holder.link.setText(result.getLink());
+        holder.name.setText(result.getName());
         holder.description.setText(result.getDescription());
+        holder.bogie.setText(result.getBogie());
     }
 
     @Override
@@ -64,11 +66,13 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView link, description;
+        TextView bogie, link, name, description;
 
         MyViewHolder(final View view) {
             super(view);
+            bogie = (TextView) view.findViewById(R.id.result_item_bogie);
             link = (TextView) view.findViewById(R.id.result_item_link);
+            name = (TextView) view.findViewById(R.id.result_item_name);
             description = (TextView) view.findViewById(R.id.result_item_description);
         }
     }
