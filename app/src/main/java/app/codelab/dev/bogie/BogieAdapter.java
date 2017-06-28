@@ -63,6 +63,12 @@ class BogieAdapter extends RecyclerView.Adapter<BogieAdapter.MyViewHolder> {
         mBogies.add(new Bogie(Boogies.ENV));
     }
 
+    public void removeItem(int position) {
+        mBogies.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, mBogies.size());
+    }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name;
