@@ -1,9 +1,12 @@
 package app.codelab.dev.bogie;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
-import android.text.Spanned;
+import android.text.SpannableStringBuilder;
 import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.URLSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +19,11 @@ import java.util.List;
  */
 
 class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
+    private Context mContext;
     private List<Result> mResults;
 
-    ResultAdapter(final List<Result> results){
+    ResultAdapter(final Context context, final List<Result> results) {
         mResults = results;
-        this.setupResultsList();
     }
 
     @Override
@@ -34,28 +37,64 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         final Result result = mResults.get(position);
-        final TextView name = holder.name;
+        final TextView nameTextView = holder.name;
+        final TextView descriptionTextView = holder.description;
+
+
+        final String name = result.getName();
         final String link = result.getLink();
-        final String clickableName = "<b>text3:</b>  Text with a " +
-                String.format("<a href=\"%s\">link</a> ", link);
+        final String description = result.getDescription();
 
 
-        name.setText(fromHtml(clickableName));
-        name.setMovementMethod(LinkMovementMethod.getInstance());
+//        SpannableString ss1 = new SpannableString(name);
+//        ss1.setSpan(new URLSpan(link),
+//                0,
+//                ss1.length(),
+//                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        nameTextView.setText(ss1);
 
-        name.setText(result.getName());
-        holder.description.setText(result.getDescription());
+//        nameTextView.setText(name);
+//        setTextViewHTML(nameTextView, link);
+
+
+        descriptionTextView.setText(description);
+        nameTextView.setText(name);
+        nameTextView.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+//                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+//                        mContext.startActivity(intent);
+                    }
+                }
+        );
+
+
     }
 
-    @SuppressWarnings("deprecation")
-    public static Spanned fromHtml(String html){
-        Spanned result;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            result = Html.fromHtml(html,Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            result = Html.fromHtml(html);
+    protected void setTextViewHTML(TextView text, String html) {
+        CharSequence sequence = Html.fromHtml(html);
+        SpannableStringBuilder strBuilder = new SpannableStringBuilder(sequence);
+        URLSpan[] urls = strBuilder.getSpans(0, sequence.length(), URLSpan.class);
+        for (URLSpan span : urls) {
+            makeLinkClickable(strBuilder, span);
         }
-        return result;
+        text.setText(strBuilder);
+        text.setMovementMethod(LinkMovementMethod.getInstance());
+    }
+
+    protected void makeLinkClickable(SpannableStringBuilder strBuilder, final URLSpan span) {
+        int start = strBuilder.getSpanStart(span);
+        int end = strBuilder.getSpanEnd(span);
+        int flags = strBuilder.getSpanFlags(span);
+        ClickableSpan clickable = new ClickableSpan() {
+            public void onClick(View view) {
+                // Do something with span.getURL() to handle the link click...
+            }
+        };
+        strBuilder.setSpan(clickable, start, end, flags);
+        strBuilder.removeSpan(span);
     }
 
     @Override
