@@ -1,12 +1,11 @@
 package app.codelab.dev.bogie;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
-import android.text.SpannableStringBuilder;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +23,7 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
 
     ResultAdapter(final Context context, final List<Result> results) {
         mResults = results;
+        mContext = context;
     }
 
     @Override
@@ -46,55 +46,22 @@ class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHolder> {
         final String description = result.getDescription();
 
 
-//        SpannableString ss1 = new SpannableString(name);
-//        ss1.setSpan(new URLSpan(link),
-//                0,
-//                ss1.length(),
-//                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-//
-//        nameTextView.setText(ss1);
+        SpannableString content = new SpannableString(name);
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        nameTextView.setText(content);
 
-//        nameTextView.setText(name);
-//        setTextViewHTML(nameTextView, link);
-
-
-        descriptionTextView.setText(description);
-        nameTextView.setText(name);
         nameTextView.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
-//                        mContext.startActivity(intent);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(link));
+                        mContext.startActivity(intent);
                     }
                 }
         );
 
+        descriptionTextView.setText(description);
 
-    }
-
-    protected void setTextViewHTML(TextView text, String html) {
-        CharSequence sequence = Html.fromHtml(html);
-        SpannableStringBuilder strBuilder = new SpannableStringBuilder(sequence);
-        URLSpan[] urls = strBuilder.getSpans(0, sequence.length(), URLSpan.class);
-        for (URLSpan span : urls) {
-            makeLinkClickable(strBuilder, span);
-        }
-        text.setText(strBuilder);
-        text.setMovementMethod(LinkMovementMethod.getInstance());
-    }
-
-    protected void makeLinkClickable(SpannableStringBuilder strBuilder, final URLSpan span) {
-        int start = strBuilder.getSpanStart(span);
-        int end = strBuilder.getSpanEnd(span);
-        int flags = strBuilder.getSpanFlags(span);
-        ClickableSpan clickable = new ClickableSpan() {
-            public void onClick(View view) {
-                // Do something with span.getURL() to handle the link click...
-            }
-        };
-        strBuilder.setSpan(clickable, start, end, flags);
-        strBuilder.removeSpan(span);
     }
 
     @Override
