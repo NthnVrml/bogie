@@ -24,7 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import app.codelab.dev.bogie.R;
 
 /**
  * Created by Nicolas on 27/06/2017.

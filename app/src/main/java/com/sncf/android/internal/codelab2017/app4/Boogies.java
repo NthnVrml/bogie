@@ -2,7 +2,6 @@ package com.sncf.android.internal.codelab2017.app4;
 
 import android.support.annotation.DrawableRes;
 
-import app.codelab.dev.bogie.R;
 
 /**
  * Created by Nicolas on 27/06/2017.
